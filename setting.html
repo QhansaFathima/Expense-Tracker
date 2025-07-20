@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+  .auth-box {
+  flex: 1.5;
+  min-width: 500px;
+}
+</style>
+<body>
+  <div class="main-container">
+    <img src="logo.png" alt="Expense Tracker Logo" class="logo" />
+
+    <div class="auth-box">
+      <h2>Settings</h2>
+
+      <button id="darkToggle" style="margin: 10px 0;">🌓 Toggle Dark Mode</button>
+      <button onclick="clearData()" style="margin: 10px 0;">🗑️ Clear All Expenses</button>
+      <button onclick="resetPassword()" style="margin: 10px 0;">🔑 Reset Password</button>
+      <button onclick="logout()" style="margin: 10px 0;">🚪 Logout</button>
+      <p class="link-text"><a href="index.html">← Back to Dashboard</a></p>
+    </div>
+  </div>
+
+  <script src="setting.js"></script>
+  <script src="darkmode.js"></script>
+</body>
+</html>

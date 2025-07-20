@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Expenses</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .auth-box {
+      flex: 1.5;
+      min-width: 500px;
+    }
+    .summary-box {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+    }
+
+    .summary-item {
+      flex: 1;
+      text-align: center;
+      font-weight: bold;
+    }
+    .delete-btn, .edit-btn {
+  padding: 5px 10px;
+  margin-left: 1px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  color: white;
+}
+.edit-btn {
+  background-color: #3498db; /* blue */
+  margin-right: 1px;
+}
+
+.delete-btn {
+  background-color: #e74c3c; /* red */
+  margin-left: 0;  /* no margin */
+}
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+  .edit-btn {
+  background-color: #3498db; /* blue */
+  margin-right: 1px;  /* Add this */
+}
+
+.edit-btn:hover {
+  background-color: #2980b9;
+}
+
+  .expense-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+
+  .expense-details {
+    flex-grow: 1;
+  }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="auth-box">
+      <h2>My Expenses</h2>
+
+      <!-- Summary Section -->
+      <div id="summaryBox" class="summary-box">
+        <div class="summary-item" id="totalIncome">Income: ₹0</div>
+        <div class="summary-item" id="totalExpenses">Expenses: ₹0</div>
+        <div class="summary-item" id="totalSavings">Savings: ₹0</div>
+      </div>
+
+      <div id="categoryTotals" class="category-totals"></div>
+      <div id="expenseList" class="expense-list-container"></div>
+
+      <p class="link-text"><a href="index.html">← Back to Dashboard</a></p>
+    </div>
+  </div>
+
+  <script src="view-expense.js"></script>
+  <script src="darkmode.js"></script>
+
+</body>
+</html>

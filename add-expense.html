@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Expense</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <div class="main-container">
+    <img src="logo.png" alt="Expense Tracker Logo" class="logo" />
+    <div class="auth-box">
+      <h2>Add a New Expense</h2>
+      <form id="expenseForm">
+        <input type="text" id="title" placeholder="Expense Title" required />
+        <input type="number" id="amount" placeholder="Amount (₹)" required />
+        <input type="date" id="date" required />
+        <select id="category" required>
+  <option value="">Select Category</option>
+  <option value="Food">🍽️ Food</option>
+  <option value="Transport">🚌 Transport</option>
+  <option value="Shopping">🛍️ Shopping</option>
+  <option value="Bills">💡 Bills</option>
+  <option value="Others">📌 Others</option>
+       </select>
+<input type="text" id="description" placeholder="Optional Description" />
+
+<button type="submit">Add Expense</button>
+
+        <p class="link-text"><a href="index.html">← Back to Dashboard</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="add-expense.js"></script>
+  <script src="setting.js"></script>
+  <script src="darkmode.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+ /* ========= Base Styles ========= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+/* ========= Dashboard Navigation Buttons ========= */
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.nav-buttons .btn {
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  background-color: #4caf50; /* default button color */
+  transition: background-color 0.3s ease;
+}
+.nav-buttons .btn:hover {
+  opacity: 0.9;
+}
+/* ========= Layout Containers ========= */
+.main-container {
+  text-align: center;
+  padding: 10px;
+}
+.auth-box {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px;  /* Increased from 400px to 900px */
+  margin: 0 auto;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+
+/* ========= Logo ========= */
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+/* ========= Text Elements ========= */
+.auth-box h1,
+.auth-box h2,
+.auth-box h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.total-expense {
+  font-size: 20px;
+  color: #2e7d32;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ========= Inputs & Select ========= */
+.auth-box input,
+.auth-box select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.auth-box input:focus,
+.auth-box select:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* ========= Buttons ========= */
+.auth-box button,
+#darkToggle {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-box button:hover,
+#darkToggle:hover {
+  background-color: #4caf50;
+}
+
+#darkToggle {
+  margin-top: 10px;
+  background-color: #4caf50;
+}
+
+/* ========= Links ========= */
+.link-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.link-text a {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.link-text a:hover {
+  color: #2e7d32;
+}
+
+.back-button {
+  display: inline-block;
+  margin: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #2c3e50;
+  background: #ecf0f1;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #bdc3c7;
+}
+
+/* ========= Table ========= */
+.report-table {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.report-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.report-table th,
+.report-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.report-table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.report-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.report-table tr:hover {
+  background-color: #e0f7fa;
+}
+
+/* ========= Dark Mode ========= */
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark .auth-box {
+  background-color: #1f1f1f;
+  box-shadow: 0 0 10px #555;
+}
+
+body.dark .report-table th {
+  background-color: #333;
+}
+
+body.dark .report-table tr:nth-child(even) {
+  background-color: #222;
+}
+
+body.dark .report-table,
+body.dark .auth-box {
+  color: #fff;
+}
+
+body.dark .back-button {
+  background-color: #333;
+  color: #eee;
+}
+
+body.dark .back-button:hover {
+  background-color: #444;
+}
+/* Headings - Force white in dark mode */
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: #fff;
+}
+
+
+/* ========= Dark Mode for Cards ========= */
+body.dark .expense-card {
+  background-color: #2a2a2a;
+  color: #f1f1f1;
+}
+
+body.dark .delete-btn {
+  background-color: #e53935;
+}
+
+body.dark .delete-btn:hover {
+  background-color: #c62828;
+}
+.dashboard-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  margin: 30px auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+/* Fix for view-expense.html white box text in dark mode */
+body.dark .dashboard-content {
+  color: #000;
+}
+
+/* Fix for profile page Welcome heading in dark mode */
+body.dark h2#welcomeMessage {
+  color: #fff;
+}
+
+.expense-list-container {
+  margin-top: 20px;
+}
+
+.expense-card {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+/* ========= Profile Page ========= */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.profile-container {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h2#welcomeMessage {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.profile-pic-box img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #888;
+}
+
+.profile-pic-box input {
+  margin-top: 10px;
+}
+
+.profile-form input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 90%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.profile-form button {
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.profile-data {
+  margin-top: 25px;
+  text-align: left;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.profile-data p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+#buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

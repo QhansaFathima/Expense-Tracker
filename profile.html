@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  .auth-box {
+    flex: 1.5;
+    min-width: 500px;
+  }
+</style>
+<body>
+  <div class="auth-box">
+    <h2 id="welcomeMessage">Welcome!</h2>
+
+    <div class="profile-pic-box">
+      <img id="profilePicPreview" src="default-avatar.png" alt="Profile Picture" width="100">
+      <input type="file" id="profilePicInput" accept="image/*">
+    </div>
+
+    <div class="profile-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your Name" required>
+
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your Email" required>
+
+      <label for="phone">Phone</label>
+      <input type="number" id="phone" placeholder="Phone Number" required>
+
+      <label for="occupation">Occupation</label>
+      <input type="text" id="occupation" placeholder="Your Occupation">
+
+      <label for="income">Monthly Income (₹)</label>
+      <input type="number" id="income" placeholder="Monthly Income" required>
+
+      <div id="buttonContainer">
+        <button id="editBtn">Edit Profile</button>
+        <button id="saveBtn">Save Profile</button>
+      </div>
+    </div>
+
+    <div id="profileData" class="profile-data"></div>
+
+    <p class="link-text"><a href="index.html">← Back to Dashboard</a></p>
+  </div>
+
+  <script src="profile.js"></script>
+  <script src="darkmode.js"></script>
+</body>
+</html>

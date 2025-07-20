@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Report</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<style>
+  .report-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Makes it responsive */
+  padding: 20px;
+}
+.chart-box {
+  width: 100%;
+  max-width: 400px; /* Increase this if you want it bigger */
+  height: 400px;     /* Increase height */
+}
+.chart-box canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.chart-section {
+  flex: 1;
+  min-width: 400px;
+  max-width: 400px;
+}
+.auth-box {
+  flex: 1.5;
+  min-width: 500px;
+}
+</style>
+<body>
+  <div class="main-container">
+    <div class="report-container">
+
+      <!-- Chart and heading wrapper -->
+      <div class="chart-section">
+        <h2 class="chart-heading">Expenses Chart</h2>
+        <div class="chart-box">
+          <canvas id="expenseChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Report Box -->
+      <div class="auth-box">
+        <h1>Expense Report</h1>
+        <h3 id="totalExpense" class="total-expense">Total: ₹0</h3>
+
+        <select id="categoryFilter">
+          <option value="All">All Categories</option>
+          <option value="Food">🍽️ Food</option>
+          <option value="Transport">🚌 Transport</option>
+          <option value="Shopping">🛍️ Shopping</option>
+          <option value="Bills">💡 Bills</option>
+          <option value="Others">📌 Others</option>
+        </select>
+
+        <div id="report"></div>
+        <p class="link-text"><a href="index.html">← Back to Dashboard</a></p>
+      </div>
+      
+    </div>
+  </div>
+
+  <script>
+    function renderReport(filteredExpenses) {
+      const reportContainer = document.getElementById("report");
+
+      if (filteredExpenses.length === 0) {
+        reportContainer.innerHTML = "<p>No expenses found.</p>";
+      } else {
+        let html = "<table class='report-table'><tr><th>Date</th><th>Amount</th><th>Category</th><th>Description</th></tr>";
+        filteredExpenses.forEach(exp => {
+          html += `<tr>
+            <td>${exp.date}</td>
+            <td>₹${exp.amount}</td>
+            <td>${exp.category}</td>
+            <td>${exp.description || "-"}</td>
+          </tr>`;
+        });
+        html += "</table>";
+        reportContainer.innerHTML = html;
+      }
+
+      const total = filteredExpenses.reduce((sum, e) => sum + Number(e.amount), 0);
+      document.getElementById("totalExpense").textContent = `Total: ₹${total.toFixed(2)}`;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const expenses = JSON.parse(sessionStorage.getItem("expenses")) || [];
+      renderReport(expenses);
+
+      const filter = document.getElementById("categoryFilter");
+      filter.addEventListener("change", () => {
+        const selected = filter.value;
+        const filtered = selected === "All" ? expenses : expenses.filter(e => e.category === selected);
+        renderReport(filtered);
+      });
+    });
+  </script>
+
+  <script src="chart.js"></script>
+  <script src="darkmode.js"></script> <!-- your existing dark mode script -->
+</body>
+</html>
