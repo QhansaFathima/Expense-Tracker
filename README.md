@@ -23,5 +23,7 @@ This project was created as part of my Web Development practice to understand:
 
 - DOM manipulation using JavaScript
 - Frontend development workflow
+- Real-world UI interaction simulation
+- Local testing with browser
 
 
